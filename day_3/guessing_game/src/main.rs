@@ -124,22 +124,111 @@
 // Generating a Random number
 // (commented out everything to write the new modified version here)
 
-use std::io;
+//use std::io;
+//use rand::Rng;
+//
+//fn main() {
+//    println!("Guess the number!");
+//
+//    let secret_number = rand::thread_rng().gen_range(1..101);
+//
+//    println!("The secret number is {}", secret_number);
+//    println!("Please input your guess.");
+//
+//    let mut guess = String::new();
+//    io::stdin()
+//        .read_line(&mut guess)
+//        .expect("Failed to read line");
+//    
+//    println!("You guessed: {}", guess)
+//}
+
+// rand::thread_rng
+// The gen_range method takes a range expression as an argument and generates a random number in the range. 
+// start..end is inclusive on the lower bound, but exclusive on the upper bound, so we need to 
+// specify 1..101 to request a number between 1 and 100. Alternatively, we could pass the range
+// 1..=100, which is equivalent. 
+
+//
+// Note
+// You won't just know which traits to use and which methods and functions to call from a crate, so
+// each crate has documentation with instructions for using it. Another neat feature of Cargo is
+// that running the cargo doc --open command will build documentation provided by all of your 
+// dependencies locally and open it in your browser. If you're interested in other functionality 
+// in the rand crate, for example, run cargo doc --open and click rand in the sidebar on the
+// left.
+
+// The second new line prints the secret number. This is useful while we're devloping the program
+// to be able to test it, but we'll delete it from the final version. It's not much of a game if the
+// program prints the answer as soon as it starts!
+
+// ----------------------
+// ----------------------
+
+
+// COMPARING THE GUESS TO THE SECRET
+// same, ill comment out everything and revwiret all in this section.
+
+
 use rand::Rng;
+use std::cmp::Ordering;
+use std::io;
 
 fn main() {
+    // --snip--
     println!("Guess the number!");
 
     let secret_number = rand::thread_rng().gen_range(1..101);
 
-    println!("The secret number is {}", secret_number);
+    println!("The secret number is: {}", secret_number);
+
     println!("Please input your guess.");
 
     let mut guess = String::new();
+
     io::stdin()
         .read_line(&mut guess)
         .expect("Failed to read line");
-    
-    println!("You guessed: {}", guess)
+
+
+    // added after the beneth text about changing string to number
+    let guess: u32 = guess.trim().parse().expect("Please type a number!");
+
+    println!("You guessed: {}", guess);
+
+    match guess.cmp(&secret_number) {
+        Ordering::Less => println!("Too small!"),
+        Ordering::Greater => println!("Too big!"),
+        Ordering::Equal => println!("You win!"),
+    }
 }
+
+// this does not seem to compile yet. 
+
+// std::cmp::Ordering
+// brought in from the standard library. cmp, compare to values. Ordering is brought into scope. 
+// Ordering has Less, Greater and Equal.
+
+// A match expression is made up of "arms". An arm consists of a pattern to match against, and the code
+// that should be run if the value given to match fits the arm's pattern. Rust takes the value given to
+// match and looks through each arm's pattern in turn. Patterns and the match construct are powerful
+// Rust features that let you express a variety of situations your code might encounter and make sure
+// that you handle them all. These features will be covered in detail in Chapter 6 and Chapter 18.
+
+// need to deine String to be integer
+// default i32 type integers but there is also u32 (unsigned), i64 and u64
+// secret_number is defaulted to i32 unless other specified 
+
+// added let guess: u32 = guess.trim().parse().expect("Please type a number!");
+// pretty cool, its called shadowing and covered more in the next chapter
+// it will let us add to the same variable guess without overwriteing
+
+// guess.trim().parse().
+// The guess in the expression refers to the original guess variable that contained the input as a
+// string. The trim method on a String instance will eliminate any whitespace at the beginning and end,
+// which we must do to be able to compare the string to the u32, which can only contain numerical data.
+// The user must press enter to satisfy read_line and input their guess, which adds a newline character
+// to the string. For example, if the user types 5 and presses enter, guess looks like this: 5\n. The
+// \n represnts "newlin". (On Windows, pressing enter results in carriage rturn and a new newline, 
+// \r\n). The trim method eliminates \n or \r\n, resulting in just 5
 
