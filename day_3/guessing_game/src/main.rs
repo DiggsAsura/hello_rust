@@ -55,10 +55,46 @@ fn main() {
 
 
 
-
+    // RECEIVING USER INPUT
+    // recall use std:io;
+    // now we call the stdin() function from the io module
+    // which allows us to handle input from users
     io::stdin()
+    // if we didnt import io library at the beginning (use std:io) we could still do it by writing
+    // std:io::stdin. The stdin function returns an instance of std:io:Stdin, which is a type that
+    // represents a handle to the standard input for your terminal.
+
+        // Next, the line .read_line(&mut guess) calls the read_line method on the standard input handle
+        // to get input from user. We're also passing &mut guess as argument to read_line to tell it what
+        // string to store the user input in. The full job of read_line is to take whatever the user types
+        // into standard input and append that into a string (without overwriting its contents), so we therfor
+        // pass that string as an argument. The string argument needs to be mutable so the method can change
+        // the string's content.
+
+        // the & indicates this argument is a reference, which gives you a way to let multiple parts of your
+        // code access one piece of data without needting to copy that data into memory multiple times.
+        // refrences are immutable by default. Hence you write &mut guess rahter then &guess to make it
+        // mutable.
         .read_line(&mut guess)
+
+
+        // Handling Potential Failure with the Result Type
+        // This last part is the .expect method. We broke this up in several lines, but could be
+        // written like this:
+        // io::stdin().read_line(&mut guess).expect("Failed to read line");
+        // but divided it for ease of use/read
+
+        // read_line puts whatever the user enters into the string we pass to it, but it
+        //           also returns a value-in this case, an io::Result.
+        // theres two Result varians, Ok and Err. 
+        // The expect is somewhat expected by the compiler too deal with the situation. So if it fails
+        // (Err) it will print the following line. If not, the compiler gives us a warning.
         .expect("Failed to read line");
     
+
+    // {} are also placeholders, similar to python really
+    // let x = 5;
+    // let y = 10;
+    // println!("x = {} and y = {}", x, y)
     println!("You guess: {}", guess);
 }
