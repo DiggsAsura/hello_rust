@@ -7,22 +7,22 @@
 // ..like..
 // from std import io
 // ..i assume ?
-use std::io;
+//use std::io;
 
 
 // the fn main() will be in every program. An entry function. 
 // fn declares a new function
 // () means theres no parameters
 // everything inside {}
-fn main() {
+//fn main() {
 
     //println! is a macro that prints to the screen (the ! makes it for some reason)
-    println!("Guess the number!");
-    println!("Please input your guess.");
+//    println!("Guess the number!");
+//    println!("Please input your guess.");
 
     // Storing Values with Variables
     // Next, we'll create a variable to store the user input, like this
-    let mut guess = String::new();
+//    let mut guess = String::new();
 
     // above here a lot of stuff going on
     // let statement creates the variable
@@ -59,7 +59,7 @@ fn main() {
     // recall use std:io;
     // now we call the stdin() function from the io module
     // which allows us to handle input from users
-    io::stdin()
+//    io::stdin()
     // if we didnt import io library at the beginning (use std:io) we could still do it by writing
     // std:io::stdin. The stdin function returns an instance of std:io:Stdin, which is a type that
     // represents a handle to the standard input for your terminal.
@@ -75,7 +75,7 @@ fn main() {
         // code access one piece of data without needting to copy that data into memory multiple times.
         // refrences are immutable by default. Hence you write &mut guess rahter then &guess to make it
         // mutable.
-        .read_line(&mut guess)
+//        .read_line(&mut guess)
 
 
         // Handling Potential Failure with the Result Type
@@ -89,12 +89,57 @@ fn main() {
         // theres two Result varians, Ok and Err. 
         // The expect is somewhat expected by the compiler too deal with the situation. So if it fails
         // (Err) it will print the following line. If not, the compiler gives us a warning.
-        .expect("Failed to read line");
+//        .expect("Failed to read line");
     
 
     // {} are also placeholders, similar to python really
     // let x = 5;
     // let y = 10;
     // println!("x = {} and y = {}", x, y)
-    println!("You guess: {}", guess);
+//    println!("You guess is: {}", guess);
+//}
+
+// This is really in Day 4, but yea continue in the same folder for convenience
+
+
+
+// Next up is making the random, secret number.
+// apparently Rust does not have it included in the standard library, but we can add it to the 
+// dependencies (i guess). rand create.
+
+// Using a Create to get more Functionality
+// Remember that a create is a colleciton of Rust source code files. The project we've been building
+// is a binary crate, which is an executable. The rand create is a library crate, which contains code
+// intended to be used in other programs, and can'b be executed on its own.
+
+// Cargo's coordination of external crates is where Cargo really shines. Before we can write code that
+// uses rand, we need to modify the Cargo.toml file to include the rand crate as a dependency. Open
+// that file now and add the following line to the [dependencies] section header that Cargo created for
+// you. Be sure to specify rand exactly as we have here, with this version number, or the code examples
+// in this tutorial may not work.
+
+// rand = "0.8.3"
+
+
+// Generating a Random number
+// (commented out everything to write the new modified version here)
+
+use std::io;
+use rand::Rng;
+
+fn main() {
+    println!("Guess the number!");
+
+    let secret_number = rand::thread_rng().gen_range(1..101);
+
+    println!("The secret number is {}", secret_number);
+    println!("Please input your guess.");
+
+    let mut guess = String::new();
+    io::stdin()
+        .read_line(&mut guess)
+        .expect("Failed to read line");
+    
+    println!("You guessed: {}", guess)
 }
+
