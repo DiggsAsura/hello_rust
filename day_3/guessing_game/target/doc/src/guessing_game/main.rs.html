@@ -1,0 +1,325 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `src/main.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>main.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled><link rel="stylesheet" type="text/css" href="../../dark.css" disabled><link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../storage.js"></script><script src="../../crates.js"></script><script defer src="../../main.js"></script><script defer src="../../source-script.js"></script><script defer src="../../source-files.js"></script>
+    <noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../../guessing_game/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div>
+        </a><h2 class="location"></h2>
+    </nav>
+    <nav class="sidebar"><a class="sidebar-logo" href="../../guessing_game/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div>
+        </a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../guessing_game/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><nav class="sub"><div class="theme-picker hidden"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="22" height="22" alt="Pick another theme!" src="../../brush.svg"></button><div id="theme-choices" role="menu"></div></div><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">1</span>
+<span id="2">2</span>
+<span id="3">3</span>
+<span id="4">4</span>
+<span id="5">5</span>
+<span id="6">6</span>
+<span id="7">7</span>
+<span id="8">8</span>
+<span id="9">9</span>
+<span id="10">10</span>
+<span id="11">11</span>
+<span id="12">12</span>
+<span id="13">13</span>
+<span id="14">14</span>
+<span id="15">15</span>
+<span id="16">16</span>
+<span id="17">17</span>
+<span id="18">18</span>
+<span id="19">19</span>
+<span id="20">20</span>
+<span id="21">21</span>
+<span id="22">22</span>
+<span id="23">23</span>
+<span id="24">24</span>
+<span id="25">25</span>
+<span id="26">26</span>
+<span id="27">27</span>
+<span id="28">28</span>
+<span id="29">29</span>
+<span id="30">30</span>
+<span id="31">31</span>
+<span id="32">32</span>
+<span id="33">33</span>
+<span id="34">34</span>
+<span id="35">35</span>
+<span id="36">36</span>
+<span id="37">37</span>
+<span id="38">38</span>
+<span id="39">39</span>
+<span id="40">40</span>
+<span id="41">41</span>
+<span id="42">42</span>
+<span id="43">43</span>
+<span id="44">44</span>
+<span id="45">45</span>
+<span id="46">46</span>
+<span id="47">47</span>
+<span id="48">48</span>
+<span id="49">49</span>
+<span id="50">50</span>
+<span id="51">51</span>
+<span id="52">52</span>
+<span id="53">53</span>
+<span id="54">54</span>
+<span id="55">55</span>
+<span id="56">56</span>
+<span id="57">57</span>
+<span id="58">58</span>
+<span id="59">59</span>
+<span id="60">60</span>
+<span id="61">61</span>
+<span id="62">62</span>
+<span id="63">63</span>
+<span id="64">64</span>
+<span id="65">65</span>
+<span id="66">66</span>
+<span id="67">67</span>
+<span id="68">68</span>
+<span id="69">69</span>
+<span id="70">70</span>
+<span id="71">71</span>
+<span id="72">72</span>
+<span id="73">73</span>
+<span id="74">74</span>
+<span id="75">75</span>
+<span id="76">76</span>
+<span id="77">77</span>
+<span id="78">78</span>
+<span id="79">79</span>
+<span id="80">80</span>
+<span id="81">81</span>
+<span id="82">82</span>
+<span id="83">83</span>
+<span id="84">84</span>
+<span id="85">85</span>
+<span id="86">86</span>
+<span id="87">87</span>
+<span id="88">88</span>
+<span id="89">89</span>
+<span id="90">90</span>
+<span id="91">91</span>
+<span id="92">92</span>
+<span id="93">93</span>
+<span id="94">94</span>
+<span id="95">95</span>
+<span id="96">96</span>
+<span id="97">97</span>
+<span id="98">98</span>
+<span id="99">99</span>
+<span id="100">100</span>
+<span id="101">101</span>
+<span id="102">102</span>
+<span id="103">103</span>
+<span id="104">104</span>
+<span id="105">105</span>
+<span id="106">106</span>
+<span id="107">107</span>
+<span id="108">108</span>
+<span id="109">109</span>
+<span id="110">110</span>
+<span id="111">111</span>
+<span id="112">112</span>
+<span id="113">113</span>
+<span id="114">114</span>
+<span id="115">115</span>
+<span id="116">116</span>
+<span id="117">117</span>
+<span id="118">118</span>
+<span id="119">119</span>
+<span id="120">120</span>
+<span id="121">121</span>
+<span id="122">122</span>
+<span id="123">123</span>
+<span id="124">124</span>
+<span id="125">125</span>
+<span id="126">126</span>
+<span id="127">127</span>
+<span id="128">128</span>
+<span id="129">129</span>
+<span id="130">130</span>
+<span id="131">131</span>
+<span id="132">132</span>
+<span id="133">133</span>
+<span id="134">134</span>
+<span id="135">135</span>
+<span id="136">136</span>
+<span id="137">137</span>
+<span id="138">138</span>
+<span id="139">139</span>
+<span id="140">140</span>
+<span id="141">141</span>
+<span id="142">142</span>
+<span id="143">143</span>
+<span id="144">144</span>
+<span id="145">145</span>
+<span id="146">146</span>
+<span id="147">147</span>
+<span id="148">148</span>
+<span id="149">149</span>
+<span id="150">150</span>
+<span id="151">151</span>
+<span id="152">152</span>
+<span id="153">153</span>
+<span id="154">154</span>
+<span id="155">155</span>
+<span id="156">156</span>
+<span id="157">157</span>
+<span id="158">158</span>
+<span id="159">159</span>
+</pre><pre class="rust"><code><span class="comment">// Gonna break it down with </span>
+<span class="comment">// https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html</span>
+
+
+<span class="comment">// Bring the io (input/output) library into scope, from the standard library.</span>
+<span class="comment">// Similar to python import i guess?</span>
+<span class="comment">// ..like..</span>
+<span class="comment">// from std import io</span>
+<span class="comment">// ..i assume ?</span>
+<span class="comment">//use std::io;</span>
+
+
+<span class="comment">// the fn main() will be in every program. An entry function. </span>
+<span class="comment">// fn declares a new function</span>
+<span class="comment">// () means theres no parameters</span>
+<span class="comment">// everything inside {}</span>
+<span class="comment">//fn main() {</span>
+
+    <span class="comment">//println! is a macro that prints to the screen (the ! makes it for some reason)</span>
+<span class="comment">//    println!(&quot;Guess the number!&quot;);</span>
+<span class="comment">//    println!(&quot;Please input your guess.&quot;);</span>
+
+    <span class="comment">// Storing Values with Variables</span>
+    <span class="comment">// Next, we&#39;ll create a variable to store the user input, like this</span>
+<span class="comment">//    let mut guess = String::new();</span>
+
+    <span class="comment">// above here a lot of stuff going on</span>
+    <span class="comment">// let statement creates the variable</span>
+    <span class="comment">// another example:</span>
+    <span class="comment">// let apples = 5; </span>
+    <span class="comment">// (assume that is like python: apples = 5)</span>
+
+    <span class="comment">// This line above creates the variable apples and binds it to have the value 5. In Rust,</span>
+    <span class="comment">// variables are immutable by default. We&#39;ll be discussing this concept in detail in the</span>
+    <span class="comment">// &quot;Variables and Mutability&quot; section in Chapter 3. To make a variable mutable, we add mut</span>
+    <span class="comment">// before the variable name:</span>
+
+    <span class="comment">// let apples = 5; // immutable</span>
+    <span class="comment">// let mut bananas = 5; //mutable</span>
+
+    <span class="comment">// back to the actual program. Now we know that we just made a mutable variable, guess.</span>
+    <span class="comment">// the guess variable is equal to a new string.. </span>
+    
+    <span class="comment">// String::new();</span>
+    <span class="comment">// This will return a new instance of a String. String is a string type provided by the standard</span>
+    <span class="comment">// library that is growable, UTF-8 encoded bit of text.</span>
+
+    <span class="comment">// The :: syntax in the ::new line indicates new is an associate function of the String type. An </span>
+    <span class="comment">// associated function is a function that&#39;s implemented on a type, in this case String. This new</span>
+    <span class="comment">// function creates a new, empty string. You&#39;ll find a new function on many types, because it&#39;s </span>
+    <span class="comment">// a common name for a function that makes a new value of some kind.</span>
+
+    <span class="comment">// In full, the let mut guess = String::new() line has created a mutable variable that is currently</span>
+    <span class="comment">// bound to a new, empty instance of Sring. Whews!</span>
+
+
+
+    <span class="comment">// RECEIVING USER INPUT</span>
+    <span class="comment">// recall use std:io;</span>
+    <span class="comment">// now we call the stdin() function from the io module</span>
+    <span class="comment">// which allows us to handle input from users</span>
+<span class="comment">//    io::stdin()</span>
+    <span class="comment">// if we didnt import io library at the beginning (use std:io) we could still do it by writing</span>
+    <span class="comment">// std:io::stdin. The stdin function returns an instance of std:io:Stdin, which is a type that</span>
+    <span class="comment">// represents a handle to the standard input for your terminal.</span>
+
+        <span class="comment">// Next, the line .read_line(&amp;mut guess) calls the read_line method on the standard input handle</span>
+        <span class="comment">// to get input from user. We&#39;re also passing &amp;mut guess as argument to read_line to tell it what</span>
+        <span class="comment">// string to store the user input in. The full job of read_line is to take whatever the user types</span>
+        <span class="comment">// into standard input and append that into a string (without overwriting its contents), so we therfor</span>
+        <span class="comment">// pass that string as an argument. The string argument needs to be mutable so the method can change</span>
+        <span class="comment">// the string&#39;s content.</span>
+
+        <span class="comment">// the &amp; indicates this argument is a reference, which gives you a way to let multiple parts of your</span>
+        <span class="comment">// code access one piece of data without needting to copy that data into memory multiple times.</span>
+        <span class="comment">// refrences are immutable by default. Hence you write &amp;mut guess rahter then &amp;guess to make it</span>
+        <span class="comment">// mutable.</span>
+<span class="comment">//        .read_line(&amp;mut guess)</span>
+
+
+        <span class="comment">// Handling Potential Failure with the Result Type</span>
+        <span class="comment">// This last part is the .expect method. We broke this up in several lines, but could be</span>
+        <span class="comment">// written like this:</span>
+        <span class="comment">// io::stdin().read_line(&amp;mut guess).expect(&quot;Failed to read line&quot;);</span>
+        <span class="comment">// but divided it for ease of use/read</span>
+
+        <span class="comment">// read_line puts whatever the user enters into the string we pass to it, but it</span>
+        <span class="comment">//           also returns a value-in this case, an io::Result.</span>
+        <span class="comment">// theres two Result varians, Ok and Err. </span>
+        <span class="comment">// The expect is somewhat expected by the compiler too deal with the situation. So if it fails</span>
+        <span class="comment">// (Err) it will print the following line. If not, the compiler gives us a warning.</span>
+<span class="comment">//        .expect(&quot;Failed to read line&quot;);</span>
+    
+
+    <span class="comment">// {} are also placeholders, similar to python really</span>
+    <span class="comment">// let x = 5;</span>
+    <span class="comment">// let y = 10;</span>
+    <span class="comment">// println!(&quot;x = {} and y = {}&quot;, x, y)</span>
+<span class="comment">//    println!(&quot;You guess is: {}&quot;, guess);</span>
+<span class="comment">//}</span>
+
+<span class="comment">// This is really in Day 4, but yea continue in the same folder for convenience</span>
+
+
+
+<span class="comment">// Next up is making the random, secret number.</span>
+<span class="comment">// apparently Rust does not have it included in the standard library, but we can add it to the </span>
+<span class="comment">// dependencies (i guess). rand create.</span>
+
+<span class="comment">// Using a Create to get more Functionality</span>
+<span class="comment">// Remember that a create is a colleciton of Rust source code files. The project we&#39;ve been building</span>
+<span class="comment">// is a binary crate, which is an executable. The rand create is a library crate, which contains code</span>
+<span class="comment">// intended to be used in other programs, and can&#39;b be executed on its own.</span>
+
+<span class="comment">// Cargo&#39;s coordination of external crates is where Cargo really shines. Before we can write code that</span>
+<span class="comment">// uses rand, we need to modify the Cargo.toml file to include the rand crate as a dependency. Open</span>
+<span class="comment">// that file now and add the following line to the [dependencies] section header that Cargo created for</span>
+<span class="comment">// you. Be sure to specify rand exactly as we have here, with this version number, or the code examples</span>
+<span class="comment">// in this tutorial may not work.</span>
+
+<span class="comment">// rand = &quot;0.8.3&quot;</span>
+
+
+<span class="comment">// Generating a Random number</span>
+<span class="comment">// (commented out everything to write the new modified version here)</span>
+
+<span class="kw">use</span> <span class="ident">std::io</span>;
+<span class="kw">use</span> <span class="ident">rand::Rng</span>;
+
+<span class="kw">fn</span> <span class="ident">main</span>() {
+    <span class="macro">println!</span>(<span class="string">&quot;Guess the number!&quot;</span>);
+
+    <span class="kw">let</span> <span class="ident">secret_number</span> <span class="op">=</span> <span class="ident">rand::thread_rng</span>().<span class="ident">gen_range</span>(<span class="number">1</span>..<span class="number">101</span>);
+
+    <span class="macro">println!</span>(<span class="string">&quot;The secret number is {}&quot;</span>, <span class="ident">secret_number</span>);
+    <span class="macro">println!</span>(<span class="string">&quot;Please input your guess.&quot;</span>);
+
+    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">guess</span> <span class="op">=</span> <span class="ident">String::new</span>();
+    <span class="ident">io::stdin</span>()
+        .<span class="ident">read_line</span>(<span class="kw-2">&amp;mut</span> <span class="ident">guess</span>)
+        .<span class="ident">expect</span>(<span class="string">&quot;Failed to read line&quot;</span>);
+    
+    <span class="macro">println!</span>(<span class="string">&quot;You guessed: {}&quot;</span>, <span class="ident">guess</span>)
+}
+
+<span class="comment">// rand::thread_rng</span>
+<span class="comment">// The gen_range method takes a range expression as an argument and generates a random number in the range. </span>
+<span class="comment">// start..end is inclusive on the lower bound, but exclusive on the upper bound, so we need to </span>
+<span class="comment">// specify 1..101 to request a number between 1 and 100. Alternatively, we could pass the range</span>
+<span class="comment">// 1..=100, which is equivalent. </span>
+
+<span class="comment">//</span>
+<span class="comment">// Note</span>
+<span class="comment">// You won&#39;t just know which traits to use and which methods and functions to call from a crate, so</span>
+<span class="comment">// each crate has documentation with instructions for using it. Another neat feature of Cargo is</span>
+<span class="comment">// that running the cargo doc --open command will build documentation provided by all of your </span>
+<span class="comment">// dependencies locally and open it in your browser. If you&#39;re interested in other functionality </span>
+<span class="comment">// in the rand crate, for example, run cargo doc --open and click rand in the sidebar on the</span>
+<span class="comment">// left.</span></code></pre></div>
+</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="guessing_game" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.61.0 (fe5b13d68 2022-05-18)" ></div>
+</body></html>
