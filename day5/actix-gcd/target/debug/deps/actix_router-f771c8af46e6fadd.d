@@ -1,0 +1,12 @@
+/home/kenneth/github/hello_rust/day5/actix-gcd/target/debug/deps/actix_router-f771c8af46e6fadd.rmeta: /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.1.5/src/lib.rs /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.1.5/src/de.rs /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.1.5/src/path.rs /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.1.5/src/resource.rs /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.1.5/src/router.rs /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.1.5/src/url.rs
+
+/home/kenneth/github/hello_rust/day5/actix-gcd/target/debug/deps/libactix_router-f771c8af46e6fadd.rlib: /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.1.5/src/lib.rs /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.1.5/src/de.rs /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.1.5/src/path.rs /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.1.5/src/resource.rs /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.1.5/src/router.rs /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.1.5/src/url.rs
+
+/home/kenneth/github/hello_rust/day5/actix-gcd/target/debug/deps/actix_router-f771c8af46e6fadd.d: /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.1.5/src/lib.rs /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.1.5/src/de.rs /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.1.5/src/path.rs /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.1.5/src/resource.rs /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.1.5/src/router.rs /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.1.5/src/url.rs
+
+/home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.1.5/src/lib.rs:
+/home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.1.5/src/de.rs:
+/home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.1.5/src/path.rs:
+/home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.1.5/src/resource.rs:
+/home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.1.5/src/router.rs:
+/home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.1.5/src/url.rs:

@@ -1,0 +1,11 @@
+/home/kenneth/github/hello_rust/day5/actix-gcd/target/debug/deps/actix_codec-b2024ffb8534fecc.rmeta: /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-codec-0.1.2/src/lib.rs /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-codec-0.1.2/src/bcodec.rs /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-codec-0.1.2/src/framed.rs /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-codec-0.1.2/src/framed_read.rs /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-codec-0.1.2/src/framed_write.rs
+
+/home/kenneth/github/hello_rust/day5/actix-gcd/target/debug/deps/libactix_codec-b2024ffb8534fecc.rlib: /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-codec-0.1.2/src/lib.rs /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-codec-0.1.2/src/bcodec.rs /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-codec-0.1.2/src/framed.rs /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-codec-0.1.2/src/framed_read.rs /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-codec-0.1.2/src/framed_write.rs
+
+/home/kenneth/github/hello_rust/day5/actix-gcd/target/debug/deps/actix_codec-b2024ffb8534fecc.d: /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-codec-0.1.2/src/lib.rs /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-codec-0.1.2/src/bcodec.rs /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-codec-0.1.2/src/framed.rs /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-codec-0.1.2/src/framed_read.rs /home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-codec-0.1.2/src/framed_write.rs
+
+/home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-codec-0.1.2/src/lib.rs:
+/home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-codec-0.1.2/src/bcodec.rs:
+/home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-codec-0.1.2/src/framed.rs:
+/home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-codec-0.1.2/src/framed_read.rs:
+/home/kenneth/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-codec-0.1.2/src/framed_write.rs:
