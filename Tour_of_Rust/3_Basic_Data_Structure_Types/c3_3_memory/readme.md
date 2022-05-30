@@ -4,7 +4,7 @@ Rust programs have 3 memory regions where data is stored:
 
 ## data memory
 For data that is fixed in size and static (i.e. always available through life 
-of program). Copnsider the text in your program (e.g "Hello World!"): This text's bytes are only ever read from one place and therfore can be stored in
+of program). Consider the text in your program (e.g "Hello World!"): This text's bytes are only ever read from one place and therfore can be stored in
 this region. Compilers make lots of optimizations with this kind of data,
 and they are generally considered very fast to use since locations are known 
 and fixed.
