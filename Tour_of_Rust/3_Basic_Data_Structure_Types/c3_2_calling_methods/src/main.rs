@@ -19,3 +19,6 @@ fn main() {
     // Using a method on the instance
     println!("{} is {} characters long.", s, s.len());
 }
+
+
+// ok this does not make much sense to me coming from Python (String::from)
