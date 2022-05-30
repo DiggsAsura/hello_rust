@@ -18,3 +18,6 @@ Memory details of our example:
     2. Storing a refrence to that memory location on the *heap* and storing it in String struct (More on this in future lessons)
 
 * Finally our two friends *Ferris* and *Sarah* have data structures that will always have fixed locations in our program, so they are placed on the *stack*.
+
+
+OH, a little a-ha here. Could stucts be somewhat Rust's version of classes? 
