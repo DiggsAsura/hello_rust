@@ -1,0 +1,8 @@
+[package]
+name = "ch2_7_returning_values_from_block_expressions"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
