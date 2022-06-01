@@ -1,0 +1,1 @@
+/home/kenneth/github/hello_rust/Tour_of_Rust/5_Ownership_and_Borrowing_Data/c5-4-moving_ownership/target/debug/c5-4-moving_ownership: /home/kenneth/github/hello_rust/Tour_of_Rust/5_Ownership_and_Borrowing_Data/c5-4-moving_ownership/src/main.rs
