@@ -1,0 +1,6 @@
+This text is imported from the
+file hello.txt
+
+So it seems files is imported a bit different
+then in Python? Or? Does it have to be closed?
+
