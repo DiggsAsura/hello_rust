@@ -8,7 +8,7 @@ Rust supports the common codes from C-based languages:
 * \n - newline
 * \r - carriage return
 * \t - tab
-* \\ - backslash
+* \ \ - (whitout spaces, md wont do double in succession) backslash
 * \0 - null
 * \' - single-quote
 
