@@ -2,10 +2,10 @@
 
 The * (star/astrics) operator is an explicit way to dereference a reference.
 
-let a: i32 = 42;
-let ref\_ref\_ref\_a: &&&i32 = &&&a;
-let ref\_a: &i32 = \**ref\_ref\_ref\_a;
-let b: i32 = \*ref_a;
+let a: i32 = 42;  
+let ref\_ref\_ref\_a: &&&i32 = &&&a;  
+let ref\_a: &i32 = \**ref\_ref\_ref\_a;  
+let b: i32 = \*ref_a;  
 
 Memory detail:
 
