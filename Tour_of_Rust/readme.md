@@ -1,4 +1,4 @@
-# Day 7-15 ish? Tour of Rust
+# Day 7-14 Tour of Rust
 
 Started this, as I find my book way too hard yet. I need babysteps. This one
 looks quite promising!
