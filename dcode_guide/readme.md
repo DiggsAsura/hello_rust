@@ -6,3 +6,5 @@ short videos on Youtube.
 https://www.youtube.com/watch?v=vOMJlQ5B-M0&list=PLVvjrrRCBy2JSHf9tGxGKJ-bYAN_uDCUL
 
 This is just awesome. Thanks man, if you ever see this.
+
+Started day 15.
