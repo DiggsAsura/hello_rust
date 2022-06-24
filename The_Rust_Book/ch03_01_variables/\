@@ -1,0 +1,12 @@
+// https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html
+
+fn main() {i
+    let mut x = 5;
+    println!("The value of x is: {}", x);
+    x = 6;
+    println!("The new value of x is: {}", x);
+
+    // Consts will always be immutable. We declare consts with consts instead
+    // of mut. And it MUST be annotated. (?!?!?!)
+    
+}
