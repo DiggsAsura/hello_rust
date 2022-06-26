@@ -13,7 +13,6 @@ fn main() {
     match &*name.trim() {
 //    match name.as_str().trim() {
         "Diggs" => println!("Cool as heck eh!"),
-        "Sarah" => println!("Best step daughter!"),
         "Tetris" => println!("Hell yea"),
         _ => println!("No match"),
     };
