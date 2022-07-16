@@ -33,9 +33,10 @@ fn main() {
         println!("number was something other than zero");
     }
 
-    // Following parts
+    // 123 Following parts
     part_two(12);
     part_three();
+    part_four();
 }
 
 
@@ -74,3 +75,25 @@ fn part_three() {
 // This will fail, because variables need one type only. Means both arms need to be same type
 // or it will fail at compile time. 
 
+
+
+// Part 4: Repeating Code with loop
+// -----------------------------------
+
+// The loop keyword tells Rust to execute a block of code over and over again forever
+// until you explicitly tell it to stop. 
+//
+// As an example, try this. Ctrl-c to stop:
+
+fn part_four() {
+    let mut count = 0;
+    loop {
+        if count < 100 {
+            println!("Count: {count}");
+            count += 1;
+            continue
+        } else {
+            break
+        } 
+    }
+}
