@@ -37,6 +37,7 @@ fn main() {
     part_two(12);
     part_three();
     part_four();
+    part_five();
 }
 
 
@@ -88,7 +89,7 @@ fn part_three() {
 fn part_four() {
     let mut count = 0;
     loop {
-        if count < 100 {
+        if count < 10 {
             println!("Count: {count}");
             count += 1;
             continue
@@ -97,3 +98,30 @@ fn part_four() {
         } 
     }
 }
+
+
+
+// Part 5: Returning Values from Loops
+// --------------------------------------
+
+fn part_five() {
+    let mut counter = 0;
+
+    let result = loop {
+        counter += 1;
+
+        if counter == 10 {
+            break counter * 2; // break AND return count * 2, well make it the expression of the
+                               // let statement 
+        }
+    };
+
+    println!("The result is {result}");
+}
+
+// Before the loop, we declare a variable named counter and initialize it to 0. Then we
+// declare a variable named result to hold the value returned from the loop. On every iteration
+// of the loop, we add 1 and the counter variable, and then check wheter the counter is 
+// equal to 10. When it is, we use the break keyword with the value counter * 2. 
+// After the loop, we use a semicolon to end the statement that assigns the value to 
+// result. Finally, we print the value in result, which in this case is 20. 
