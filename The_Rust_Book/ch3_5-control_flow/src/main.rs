@@ -40,6 +40,9 @@ fn main() {
     part_five();
     part_six();
     part_seven();
+    part_eight_while();
+    part_eight_for();
+    part_eight_for_range();
 }
 
 
@@ -178,3 +181,76 @@ fn part_seven() {
 
     println!("LIFTOFF!!!");
 }
+
+// This construct (while) eliminates a lot of nesting that would be necessary if you used
+// loop, if, else, and break, and it's clearer. While a conditions hold true, the code runs,
+// otherwise, it exits the loop. 
+
+
+
+// Part 8: Looping Through a Collection with for
+// -----------------------------------------------
+//
+// I guess, the for loop pretty much? Eh? 
+
+// loop through an array with while, to see how much better it is with for lol
+
+fn part_eight_while() {
+    let a = [10, 20, 30, 40, 50];
+    let mut index = 0;
+
+    while index < 5 {
+        println!("The value is: {}", a[index]);
+        index += 1;
+    }
+}
+
+// Here, the code counts up through the elements in the array. It start at index 0, and
+// then loops until it reaches the final index in the array (that is, when index < 5 is
+// no longer TRUE). Running this code will print every element in the array. 
+
+// This is not good, it is prone to error and can panic if f.x not enough items in the
+// array. It's also slow, because the compiler adds runtime code to perform the conditional
+// check of wheter the index is within the bounds of the array on every iteration 
+// of the loop. 
+
+// A better way is ofc the for loop:
+
+fn part_eight_for() {
+    let a = [10, 20, 30, 40, 50];
+    for element in a {
+        println!("the value is: {element}");
+    }
+}
+
+// the for loop is so much used in rust, we usually use it even where while might be 
+// usually applied..? did i get that right? 
+
+// countdown example with for and range (note the range, i like that in rust)
+fn part_eight_for_range() {
+    for num in (1..4).rev() {
+        println!("{num}!");
+    }
+    println!("LIFTOFF!!!");
+}
+
+// This code is a bit nicer, isnt't it? 
+//
+// ...hmm is .rev() function just reverse? Looks like it.
+
+
+
+// Summary
+// --------
+//
+// You made it! That was a sizeable chapter: you learned about variables, scalar and compound
+// data types, functions, comments, if expressions, and loops! To practice with the concepts
+// discussed in this chapter, try building programs to do the following:
+//
+// Convert temperatures between Farenheit and Celcius
+// Generate the nth Fibonacci number
+// Print the lyrics to the Christmas carol "The Twelve Days of Christmas", taking 
+//      advantage of the repetition in the song
+//
+// When your're ready to move on, we'll talk about a concept in Rust that doesn't commonly
+// exist in other programming languages: ownership.
