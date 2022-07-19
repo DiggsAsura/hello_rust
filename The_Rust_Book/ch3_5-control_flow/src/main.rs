@@ -39,6 +39,7 @@ fn main() {
     part_four();
     part_five();
     part_six();
+    part_seven();
 }
 
 
@@ -161,3 +162,19 @@ fn part_six() {
 // loop. 
 
 
+// Part 7: Conditional Loops with while
+// --------------------------------------
+//
+// loop, if, else - so common that you can rather use while. Piss poor summary, but it's
+// just a god dam while loop lol.
+
+fn part_seven() {
+    let mut number = 3;
+
+    while number != 0 {
+        println!("{number}!");
+        number -= 1;
+    }
+
+    println!("LIFTOFF!!!");
+}
